@@ -188,13 +188,26 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                     <thead>
                                       <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Deskripsi Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th> -->
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      <tr>
+                                        <!-- <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    
+                                      <!-- <tr>
                                         <th scope="row">1</th>
                                         <td>Mark</td>
                                         <td>Otto</td>
@@ -211,7 +224,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                         <td>Larry</td>
                                         <td>the Bird</td>
                                         <td>@twitter</td>
-                                      </tr>
+                                      </tr> -->
                                     </tbody>
                                   </table></div>
                       </div>
