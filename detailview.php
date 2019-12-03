@@ -3,11 +3,11 @@ include_once('conn.php');
 
 $profile = $_POST['desk'];
 $name                   = "SELECT profile_lulusan.deskripsi FROM profile_lulusan WHERE profile_lulusan.id_profile = $profile ";
-$names = mysqli_query($koneksi,$name);
-while($d = mysqli_fetch_assoc($names)){
-    echo  $d['deskripsi'] ;
-    echo "<br>";
-}
+// $names = mysqli_query($koneksi,$name);
+// while($d = mysqli_fetch_assoc($names)){
+//     echo  $d['deskripsi'] ;
+//     echo "<br>";
+// }
 
 $keterampilan_khusus    = "SELECT profile_lulusan.deskripsi,ketrampilan_khusus.deskripsi FROM profile_lulusan,ketrampilan_khusus WHERE profile_lulusan.id_profile = $profile ";
 $keterampilan_umum      = "SELECT profile_lulusan.deskripsi,ketrampilan_umum.deskripsi FROM profile_lulusan,ketrampilan_umum WHERE profile_lulusan.id_profile = $profile ";
@@ -34,6 +34,15 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
     <body>
             <nav class="navbar navbar-light bg-light">
                 <span class="navbar-brand mb-0 h1">Kurikulum JPTEI UNY</span>
+                <span class="h6">
+                <?php
+                    $names = mysqli_query($koneksi,$name);
+                    while($d = mysqli_fetch_assoc($names)){
+                        echo  $d['deskripsi'] ;
+                        echo "<br>";
+                    }         
+                ?>   
+                </span>
             </nav>
         <div class="fluid">
             <div class="row">
