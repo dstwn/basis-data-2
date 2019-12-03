@@ -23,11 +23,11 @@
          
           </a>
         </div>
-        <ul>
+<!--         <ul>
           <li>Home</li>
           <li>About</li>
           <li>Contact Us</li>
-        </ul>
+        </ul> -->
       </div>
       <div>
         <div class="header">
