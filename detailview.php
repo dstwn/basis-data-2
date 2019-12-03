@@ -13,27 +13,7 @@ $keterampilan_khusus    = "SELECT profile_lulusan.deskripsi,ketrampilan_khusus.d
 $keterampilan_umum      = "SELECT profile_lulusan.deskripsi,ketrampilan_umum.deskripsi FROM profile_lulusan,ketrampilan_umum WHERE profile_lulusan.id_profile = $profile ";
 $sikap                  = "SELECT profile_lulusan.deskripsi, sikap.deskripsi FROM profile_lulusan,sikap WHERE profile_lulusan.id_profile = $profile ";
 $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskripsi FROM profile_lulusan,pengetahuan WHERE profile_lulusan.id_profile = $profile ";
-
-
-// echo "<h1>Pengetahuan</h1>";
-// $kk = mysqli_query($koneksi,$pengetahuan);
-// while($d = mysqli_fetch_assoc($kk)){
-//     echo  $d['deskripsi'] ;
-//     echo "<br>";
-// }
-// echo "<h1>Keterampilan Umum</h1>";
-// $kk = mysqli_query($koneksi,$keterampilan_umum);
-// while($d = mysqli_fetch_assoc($kk)){
-//     echo  $d['deskripsi'] ;
-//     echo "<br>";
-// }
-// echo "<h1>Keterampilan Khusus</h1>";
-// $kk = mysqli_query($koneksi,$keterampilan_khusus);
-// while($d = mysqli_fetch_assoc($kk)){
-//     echo  $d['deskripsi'] ;
-//     echo "<br>";
-// }
-// ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -53,13 +33,12 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
     </head>
     <body>
             <nav class="navbar navbar-light bg-light">
-                    <span class="navbar-brand mb-0 h1">Kurikulum JPTEI UNY</span>
+                <span class="navbar-brand mb-0 h1">Kurikulum JPTEI UNY</span>
             </nav>
-                  
         <div class="fluid">
             <div class="row">
                     <div class="col-3">
-                      <div class="nav-link flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Ketrampilan Umum</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ketrampilan Khusus</a>
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Sikap</a>
@@ -70,7 +49,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                             <div style="float:right"> 
                                 <div class=d-flex> 
                                     <select>
-                                        <option class="dropdown-item"value="1">Semester 1</option>
+                                        <option class="dropdown-item"value="1">Semester</option>
                                         <option value="2">Semester 2</option>
                                         <option value="3">Semester 3</option>
                                         <option value="4">Semester 4</option>
