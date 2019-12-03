@@ -32,7 +32,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body>
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-light container">
                 <span class="navbar-brand mb-0 h1">Kurikulum JPTEI UNY</span>
                 <span class="h6">
                 <?php
@@ -44,7 +44,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                 ?>   
                 </span>
             </nav>
-            <div class="fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-3">
                       <div class="nav nav-link flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -52,8 +52,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Ketrampilan Khusus</a>
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Sikap</a>
                         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Pengetahuan</a>
-                        <div class="d-flex ">
-                            <div class="p-0"><span class="nav-link text-primary" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Mata Kuliah</span></div>
+                        <a class="nav-link" id="v-pills-matkul" data-toggle="pill" href="#v-pills-matkul" role="tab" aria-controls="v-pills-matkul" aria-selected="false">Mata Kuliah</a>
                             <div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
                                 <option value="1">Semester 1</option>
                                 <option value="2">Semester 2</option>
@@ -63,8 +62,8 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                 <option value="6">Semester 6</option>
                                 <option value="7">Semester 7</option>
                                 <option value="8">Semester 8</option>
-                              </select></div> 
-                          </div>
+                              </select>
+                            </div> 
                         <!-- <div style="display: flexbox;">           
                             <div style="float:right"> 
                             <div class=d-flex>
@@ -152,7 +151,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Deskripsi Keterampilan Umum</th>
+                                        <th scope="col">Deskripsi Pengetahuan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -193,27 +192,34 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                     <?php 
                                         }
                                     ?> -->
-                                    
-                                      <!-- <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                      </tr> -->
                                     </tbody>
-                                  </table></div>
+                                  </table>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-matkul" role="tabpanel" aria-labelledby="v-pills-matkul"><table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th> -->
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table>
+                                </div>
                       </div>
                     </div>
                   </div>
