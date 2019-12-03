@@ -34,7 +34,8 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
     </head>
     <body>
             <nav class="navbar navbar-light bg-light container">
-                <span class="navbar-brand mb-0 h1">Kurikulum JPTEI UNY</span>
+                <a href="index.php"><span class="navbar-brand mb-0 h1">Kurikulum JPTEI UNY</span></a>
+
                 <span class="h6">
                 <?php
                     $names = mysqli_query($koneksi,$name);
