@@ -19,7 +19,7 @@
       <div class="nav">
         <div class="logo">
           <a href="#">
-            <div class="logo a"> <p>Kurikulum UNY</p></div>
+            <div class="logo a"> <p>Data Kurikulum UNY</p></div>
          
           </a>
         </div>
