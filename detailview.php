@@ -63,7 +63,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Deskripsi Keterampilan Umum</th>
                                     </tr>
                                 </thead>
@@ -87,7 +87,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Deskripsi Keterampilan Khusus</th>
                                     </tr>
                                 </thead>
@@ -111,7 +111,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Deskripsi Sikap</th>
                                     </tr>
                                 </thead>
@@ -135,7 +135,7 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Deskripsi Pengetahuan</th>
                                     </tr>
                                 </thead>
@@ -156,29 +156,46 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                             </table>
                         </div>
                             <div class="tab-pane fade" id="v-pills-matkul" role="tabpanel" aria-labelledby="v-pills-matkul-tab">
-                               
-                                <table class="table table-striped">
-                                    <div class="float-right"><div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="1">Semester 1</option>
-                                <option value="2">Semester 2</option>
-                                <option value="3">Semester 3</option>
-                                <option value="4">Semester 4</option>
-                                <option value="5">Semester 5</option>
-                                <option value="6">Semester 6</option>
-                                <option value="7">Semester 7</option>
-                                <option value="8">Semester 8</option>
-                              </select></div>
-                                    
+                                <div class="container-fluid"></div>
+                            <div class="d-flex flex-column">
+                            <div class="p-2"><ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">Sem 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">Sem 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">Sem 3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-4" aria-selected="false">Sem 4</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-5" role="tab" aria-controls="pills-5" aria-selected="false">Sem 5</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-6" role="tab" aria-controls="pills-6" aria-selected="false">Sem 6</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-7-tab" data-toggle="pill" href="#pills-7" role="tab" aria-controls="pills-7" aria-selected="false">Sem 7</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-8-tab" data-toggle="pill" href="#pills-8" role="tab" aria-controls="pills-8" aria-selected="false">Sem 8</a>
+                                </li>
+                                </ul></div>
+                            <div class="p-5">                                <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab"> <table class="table table-striped">
                                     <thead>
                                       <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Mata Kuliah</th>
                                         <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th> -->
+                                        <th scope="col">Handle</th>
                                       </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- <?php
+                                       <?php
                                         $kk = mysqli_query($koneksi,$mata_kuliah);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
@@ -191,13 +208,196 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                         }
                                     ?> -->
                                     </tbody>
-                                  </table>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                <div class="tab-pane fade" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab"> <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <!-- <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $nomor = 1;
+                                        while($d = mysqli_fetch_assoc($kk)){
+                                        ?>
+                                        <tr>
+                                            <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
+                                        </tr>
+                                    <?php 
+                                        }
+                                    ?> -->
+                                    </tbody>
+                                  </table></div>
+                                </div></div>
+                            </div>
+                            
+
+                            
                                 </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 
+                         <!-- <div class="float-right"><div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                              </select></div> -->
     </body>
     
 </html>
