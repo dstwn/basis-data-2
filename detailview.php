@@ -53,23 +53,6 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Sikap</a>
                         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Pengetahuan</a>
                         <a class="nav-link" id="v-pills-matkul" data-toggle="pill" href="#v-pills-matkul" role="tab" aria-controls="v-pills-matkul" aria-selected="false">Mata Kuliah</a>
-                            <div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="1">Semester 1</option>
-                                <option value="2">Semester 2</option>
-                                <option value="3">Semester 3</option>
-                                <option value="4">Semester 4</option>
-                                <option value="5">Semester 5</option>
-                                <option value="6">Semester 6</option>
-                                <option value="7">Semester 7</option>
-                                <option value="8">Semester 8</option>
-                              </select>
-                            </div> 
-                        <!-- <div style="display: flexbox;">           
-                            <div style="float:right"> 
-                            <div class=d-flex>
-                            </div>        
-                           </div>
-                        </div>     -->
                   </div>
                 </div>
                     <div class="col-9">
@@ -170,32 +153,8 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                 </tbody>
                             </table>
                         </div>
-                              <div class="tab-pane fade" id="v-pills-settings2" role="tabpanel" aria-labelledby="v-pills-settings2-tab"><table class="table table-striped">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Deskripsi Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th> -->
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
-                                        $nomor = 1;
-                                        while($d = mysqli_fetch_assoc($kk)){
-                                        ?>
-                                        <tr>
-                                            <td><b><?php echo $nomor++ ?></td>
-                                            <td><?php echo $d['deskripsi'] ; ?></td>
-                                        </tr>
-                                    <?php 
-                                        }
-                                    ?> -->
-                                    </tbody>
-                                  </table>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-matkul" role="tabpanel" aria-labelledby="v-pills-matkul"><table class="table table-striped">
+                                <div class="tab-pane fade" id="v-pills-matkul" role="tabpanel" aria-labelledby="v-pills-matkul">
+                                    <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">#</th>
@@ -228,3 +187,16 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
     </body>
     
 </html>
+
+
+<!-- <div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                              </select>
+                            </div>  -->
