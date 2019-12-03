@@ -154,10 +154,8 @@ $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskrips
                                 </tbody>
                             </table>
                         </div>
-                                <div class="tab-pane fade" id="v-pills-matkul" role="tabpanel" aria-labelledby="v-pills-matkul-tab">
-                                
-                            </div>    
-                             
+                            <div class="tab-pane fade" id="v-pills-matkul" role="tabpanel" aria-labelledby="v-pills-matkul-tab">
+                               
                                 <table class="table table-striped">
                                     <div class="float-right"><div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
                                 <option value="1">Semester 1</option>
