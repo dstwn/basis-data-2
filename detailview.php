@@ -13,7 +13,9 @@ $keterampilan_khusus    = "SELECT profile_lulusan.deskripsi,ketrampilan_khusus.d
 $keterampilan_umum      = "SELECT profile_lulusan.deskripsi,ketrampilan_umum.deskripsi FROM profile_lulusan,ketrampilan_umum WHERE profile_lulusan.id_profile = $profile ";
 $sikap                  = "SELECT profile_lulusan.deskripsi, sikap.deskripsi FROM profile_lulusan,sikap WHERE profile_lulusan.id_profile = $profile ";
 $pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskripsi FROM profile_lulusan,pengetahuan WHERE profile_lulusan.id_profile = $profile ";
-$semester1             = "SELECT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 1 
+$semester1             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 1 
+ORDER BY mata_kuliah.semester_mk ASC";
+$semester2             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 2
 ORDER BY mata_kuliah.semester_mk ASC";
 ?>
 
@@ -187,7 +189,8 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                 </ul></div>
                                 <div style="margin-top:50px">                                
                                 <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab"> <table class="table table-striped">
+                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab"> 
+                                    <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
@@ -196,6 +199,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
                                         <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -211,12 +215,13 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                             <td><?php echo $d['semester_mk'] ; ?></td>
                                             <td><?php echo $d['sks_mk'] ; ?></td>
                                             <td><?php echo $d['syarat_mk'] ; ?></td>
+                                            <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td colspan="5">
                                             <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                        
                                     <?php 
                                         }
