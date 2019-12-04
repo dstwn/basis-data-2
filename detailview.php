@@ -17,7 +17,20 @@ $semester1             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi 
 ORDER BY mata_kuliah.semester_mk ASC";
 $semester2             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 2
 ORDER BY mata_kuliah.semester_mk ASC";
+$semester3             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 3
+ORDER BY mata_kuliah.semester_mk ASC";
+$semester4             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 4
+ORDER BY mata_kuliah.semester_mk ASC";
+$semester5             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 5
+ORDER BY mata_kuliah.semester_mk ASC";
+$semester6             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 6
+ORDER BY mata_kuliah.semester_mk ASC";
+$semester7             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 7
+ORDER BY mata_kuliah.semester_mk ASC";
+$semester8             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 8
+ORDER BY mata_kuliah.semester_mk ASC";
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -228,174 +241,285 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     ?> 
                                     </tbody>
                                   </table></div>
-                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab"> <table class="table table-striped">
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab"> 
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester2);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
                                   </table></div>
-                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab"> <table class="table table-striped">
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab"> 
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester3);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
-                                  </table></div>
-                                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab"> <table class="table table-striped">
+                                  </table>
+                                </div> 
+                                <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester4);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
-                                  </table></div>
-                                <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab"> <table class="table table-striped">
+                                  </table>
+                                </div>   
+                                <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester5);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
-                                  </table></div>
-                                <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab"> <table class="table table-striped">
+                                  </table>
+                                </div>   
+                                <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab"> 
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester6);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
-                                  </table></div>
-                                <div class="tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab"> <table class="table table-striped">
+                                  </table>
+                                </div>  
+                                <div class="tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab"> 
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester7);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
-                                  </table></div>
-                                <div class="tab-pane fade" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab"> <table class="table table-striped">
+                                  </table>
+                                </div>
+                                <div class="tab-pane fade" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab"> 
+                                <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
                                         <th scope="col">Mata Kuliah</th>
-                                        <!-- <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Semester</th>
+                                        <th scope="col">SKS</th>
+                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$mata_kuliah);
+                                        $kk = mysqli_query($koneksi,$semester8);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
+                                            <td><?php echo $d['kode_mk'] ; ?></td>
+                                            <td><?php echo $d['nama_mk'] ; ?></td>
+                                            <td><?php echo $d['semester_mk'] ; ?></td>
+                                            <td><?php echo $d['sks_mk'] ; ?></td>
+                                            <td><?php echo $d['syarat_mk'] ; ?></td>
                                             <td><?php echo $d['deskripsi'] ; ?></td>
                                         </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                            <span><b>Bahan Kajian : </b><?php echo $d['deskripsi'] ; ?></span>
+                                            </td>
+                                        </tr> -->
+                                       
                                     <?php 
                                         }
-                                    ?> -->
+                                    ?> 
                                     </tbody>
-                                  </table></div>
+                                  </table>
+                                </div>
                                 </div></div>
                             </div>
                             
