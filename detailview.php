@@ -1,13 +1,10 @@
 <?php
 include_once('conn.php');
-
 $profile = $_POST['desk'];
-$name                   = "SELECT profile_lulusan.deskripsi FROM profile_lulusan WHERE profile_lulusan.id_profile = $profile ";
-// $names = mysqli_query($koneksi,$name);
-// while($d = mysqli_fetch_assoc($names)){
-//     echo  $d['deskripsi'] ;
-//     echo "<br>";
-// }
+
+
+$name = "SELECT profile_lulusan.deskripsi FROM profile_lulusan WHERE profile_lulusan.id_profile = $profile ";
+
 
 $keterampilan_khusus    = "SELECT profile_lulusan.deskripsi,ketrampilan_khusus.deskripsi FROM profile_lulusan,ketrampilan_khusus WHERE profile_lulusan.id_profile = $profile ";
 $keterampilan_umum      = "SELECT profile_lulusan.deskripsi,ketrampilan_umum.deskripsi FROM profile_lulusan,ketrampilan_umum WHERE profile_lulusan.id_profile = $profile ";
