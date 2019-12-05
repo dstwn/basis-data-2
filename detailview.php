@@ -209,7 +209,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         <th scope="col">Mata Kuliah</th>
                                         <th scope="col">Semester</th>
                                         <th scope="col">SKS</th>
-                                        <th scope="col">Syarat</th>
+                                        <th scope="col">Syarat Min</th>
                                         <th scope="col">Bahan Kajian</th>
                                       </tr>
                                     </thead>
