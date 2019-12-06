@@ -6,33 +6,75 @@ $profile = $_POST['desk'];
 $name = "SELECT profile_lulusan.deskripsi FROM profile_lulusan WHERE profile_lulusan.id_profile = $profile ";
 
 
-$keterampilan_khusus    = "SELECT profile_lulusan.deskripsi,ketrampilan_khusus.deskripsi FROM profile_lulusan,ketrampilan_khusus WHERE profile_lulusan.id_profile = $profile ";
-$keterampilan_umum      = "SELECT profile_lulusan.deskripsi,ketrampilan_umum.deskripsi FROM profile_lulusan,ketrampilan_umum WHERE profile_lulusan.id_profile = $profile ";
-$sikap                  = "SELECT profile_lulusan.deskripsi, sikap.deskripsi FROM profile_lulusan,sikap WHERE profile_lulusan.id_profile = $profile ";
-$pengetahuan            = "SELECT profile_lulusan.deskripsi,pengetahuan.deskripsi FROM profile_lulusan,pengetahuan WHERE profile_lulusan.id_profile = $profile ";
-$semester1             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 1 
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester2             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 2
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester3             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 3
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester4             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 4
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester5             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 5
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester6             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 6
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester7             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 7
-ORDER BY mata_kuliah.semester_mk ASC";
-$semester8             = "SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi  FROM kajian_matkul, bahan_kajian, mata_kuliah WHERE kajian_matkul.id_matkul = mata_kuliah.kode_mk AND kajian_matkul.id_kajian = bahan_kajian.id_kajian AND mata_kuliah.semester_mk = 8
-ORDER BY mata_kuliah.semester_mk ASC";
+$keterampilan_khusus    = "SELECT DISTINCT profile_lulusan.deskripsi, ketrampilan_khusus.deskripsi 
+                           FROM profile_lulusan,ketrampilan_khusus,profile_has_kk 
+                           WHERE profile_lulusan.id_profile = profile_has_kk.id_profile 
+                           AND ketrampilan_khusus.id_kk = profile_has_kk.id_kk 
+                           AND profile_lulusan.id_profile = $profile";
+
+$keterampilan_umum      = "SELECT DISTINCT profile_lulusan.deskripsi, ketrampilan_umum.deskripsi 
+                           FROM profile_lulusan, ketrampilan_umum, profile_has_ku 
+                           WHERE profile_lulusan.id_profile = profile_has_ku.id_profile 
+                           AND ketrampilan_umum.id_ku = profile_has_ku.id_ku 
+                           AND profile_lulusan.id_profile = $profile";
+
+$sikap                  = "SELECT DISTINCT profile_lulusan.deskripsi, sikap.deskripsi 
+                           FROM profile_lulusan,sikap, profile_has_sikap 
+                           WHERE profile_lulusan.id_profile = profile_has_sikap.id_profile 
+                           AND sikap.id_sikap = profile_has_sikap.id_sikap
+                           AND profile_lulusan.id_profile = $profile
+                           ";
+
+$pengetahuan            = "SELECT DISTINCT profile_lulusan.deskripsi, pengetahuan.deskripsi 
+                           FROM pengetahuan, profile_lulusan, profile_has_pengetahuan 
+                           WHERE profile_lulusan.id_profile = profile_has_pengetahuan.id_profile 
+                           AND pengetahuan.id_pengetahuan = profile_has_pengetahuan.id_pengetahuan
+                           AND profile_lulusan.id_profile = $profile";
+
+$matkul_khusus          = "SELECT DISTINCT mata_kuliah.*,  bahan_kajian.deskripsi
+FROM mata_kuliah,profile_lulusan, profile_has_kk, kode_mk_has_kk , ketrampilan_khusus , bahan_kajian, kajian_matkul
+WHERE mata_kuliah.kode_mk = kode_mk_has_kk.id_mk 
+AND kode_mk_has_kk.id_kk = ketrampilan_khusus.id_kk 
+AND profile_has_kk.id_kk = ketrampilan_khusus.id_kk 
+AND profile_lulusan.id_profile = profile_has_kk.id_profile 
+AND kajian_matkul.id_kajian = bahan_kajian.id_kajian
+AND kajian_matkul.id_matkul = mata_kuliah.kode_mk
+AND profile_lulusan.id_profile = $profile
+UNION SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi
+FROM mata_kuliah,profile_lulusan, profile_has_ku, kode_mk_has_ku , ketrampilan_umum , bahan_kajian, kajian_matkul
+WHERE mata_kuliah.kode_mk = kode_mk_has_ku.id_mk 
+AND kode_mk_has_ku.id_ku = ketrampilan_umum.id_ku 
+AND profile_has_ku.id_ku = ketrampilan_umum.id_ku 
+AND profile_has_ku.id_profile = profile_lulusan.id_profile
+AND kajian_matkul.id_kajian = bahan_kajian.id_kajian
+AND kajian_matkul.id_matkul = mata_kuliah.kode_mk
+AND profile_lulusan.id_profile = $profile 
+UNION SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi 
+FROM sikap, mata_kuliah,profile_lulusan,profile_has_sikap, kode_mk_has_sikap, bahan_kajian, kajian_matkul
+WHERE mata_kuliah.kode_mk = kode_mk_has_sikap.id_mk 
+AND kode_mk_has_sikap.id_sikap = sikap.id_sikap 
+AND sikap.id_sikap = profile_has_sikap.id_sikap 
+AND profile_has_sikap.id_profile = profile_lulusan.id_profile 
+AND kajian_matkul.id_kajian = bahan_kajian.id_kajian
+AND kajian_matkul.id_matkul = mata_kuliah.kode_mk
+AND profile_lulusan.id_profile =  $profile 
+UNION SELECT DISTINCT mata_kuliah.*, bahan_kajian.deskripsi
+FROM mata_kuliah, pengetahuan, profile_lulusan, profile_has_pengetahuan, kode_mk_has_pengetahuan, bahan_kajian, kajian_matkul 
+WHERE mata_kuliah.kode_mk = kode_mk_has_pengetahuan.id_mk 
+AND kode_mk_has_pengetahuan.id_pengetahuan 
+AND pengetahuan.id_pengetahuan = profile_has_pengetahuan.id_pengetahuan 
+AND profile_lulusan.id_profile = profile_has_pengetahuan.id_profile
+AND kajian_matkul.id_kajian = bahan_kajian.id_kajian
+AND kajian_matkul.id_matkul = mata_kuliah.kode_mk
+AND profile_lulusan.id_profile = $profile  
+ORDER BY nama_mk ASC";
 ?>
 
 
 <!DOCTYPE html>
 <html>
     <head>
-        <tittle>Detail Kurikulum</tittle>
+        <title>Detail Kurikulum</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:800&display=swap" rel="stylesheet">
@@ -215,10 +257,12 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester1);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
-                                        ?>
+                                            if($d['semester_mk'] == 1) {
+                                        ?>        
+                                           
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
                                             <td><?php echo $d['kode_mk'] ; ?></td>
@@ -235,6 +279,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -254,9 +299,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester2);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk']==2) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -274,6 +320,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -293,9 +340,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester3);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk'] == 3) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -313,6 +361,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -333,9 +382,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester4);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk']==4) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -352,7 +402,8 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                             </td>
                                         </tr> -->
                                        
-                                    <?php 
+                                    <?php   
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -373,9 +424,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester5);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk'] == 5) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -393,6 +445,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -413,9 +466,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester6);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk'] == 6) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -433,6 +487,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -453,9 +508,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester7);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk'] == 7) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -473,6 +529,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -493,9 +550,10 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                     </thead>
                                     <tbody>
                                        <?php
-                                        $kk = mysqli_query($koneksi,$semester8);
+                                        $kk = mysqli_query($koneksi,$matkul_khusus);
                                         $nomor = 1;
                                         while($d = mysqli_fetch_assoc($kk)){
+                                            if($d['semester_mk'] == 8) {
                                         ?>
                                         <tr>
                                             <td><b><?php echo $nomor++ ?></td>
@@ -513,6 +571,7 @@ ORDER BY mata_kuliah.semester_mk ASC";
                                         </tr> -->
                                        
                                     <?php 
+                                            }
                                         }
                                     ?> 
                                     </tbody>
@@ -529,16 +588,6 @@ ORDER BY mata_kuliah.semester_mk ASC";
                   </div>
                 </div>
                 
-                         <!-- <div class="float-right"><div class="p-1"> <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="1">Semester 1</option>
-                                <option value="2">Semester 2</option>
-                                <option value="3">Semester 3</option>
-                                <option value="4">Semester 4</option>
-                                <option value="5">Semester 5</option>
-                                <option value="6">Semester 6</option>
-                                <option value="7">Semester 7</option>
-                                <option value="8">Semester 8</option>
-                              </select></div> -->
     </body>
     
 </html>
